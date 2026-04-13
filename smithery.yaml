@@ -1,0 +1,10 @@
+name: readme-generator-ai-mcp
+description: "MEOK AI Labs — readme-generator-ai-mcp — Generate project README files."
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/readme-generator-ai-mcp
+license: MIT
+categories: [Developer Tools, Documentation]
+tags: [readme, documentation, project-readme, markdown-readme, open-source]
+runtime: python
+entrypoint: server.py
