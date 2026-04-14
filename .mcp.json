@@ -1,20 +1,77 @@
 {
   "name": "readme-generator-ai-mcp",
-  "description": "MEOK AI Labs \u2014 readme-generator-ai-mcp \u2014 Generate project README files.",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/readme-generator-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "readme-generator-ai-mcp \u2014 Generate project README files.",
+  "version": "1.0.0",
   "tools": [
-    "run"
-  ],
-  "categories": [
-    "Developer Tools",
-    "Documentation"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "generate_readme",
+      "description": "MEOK AI Labs tool.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "project_name",
+          "description"
+        ]
+      }
+    },
+    {
+      "name": "add_badges",
+      "description": "MEOK AI Labs tool.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string"
+          },
+          "badges": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "project_name"
+        ]
+      }
+    },
+    {
+      "name": "generate_api_docs",
+      "description": "MEOK AI Labs tool.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "function_signatures": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "function_signatures"
+        ]
+      }
+    },
+    {
+      "name": "generate_contributing",
+      "description": "MEOK AI Labs tool.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "project_name"
+        ]
+      }
+    }
+  ]
 }

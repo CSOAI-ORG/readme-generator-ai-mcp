@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Generate README.md files from project analysis. — MEOK AI Labs."""
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import json, os, re, hashlib, math, random, string, time
 from datetime import datetime, timezone
 from typing import Optional
@@ -18,48 +23,64 @@ mcp = FastMCP("readme-generator-ai", instructions="MEOK AI Labs — Generate REA
 
 
 @mcp.tool()
-def generate_readme(project_name: str, description: str, language: str = 'python') -> str:
+def generate_readme(project_name: str, description: str, language: str = 'python', api_key: str = "") -> str:
     """MEOK AI Labs tool."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     result = {"tool": "generate_readme", "timestamp": datetime.now(timezone.utc).isoformat()}
     # Process input
     local_vars = {k: v for k, v in locals().items() if k not in ('result',)}
     result["input"] = str(local_vars)[:200]
     result["status"] = "processed"
-    return json.dumps(result, indent=2)
+    return result
 
 @mcp.tool()
-def add_badges(project_name: str, badges: str = 'license,version') -> str:
+def add_badges(project_name: str, badges: str = 'license,version', api_key: str = "") -> str:
     """MEOK AI Labs tool."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     result = {"tool": "add_badges", "timestamp": datetime.now(timezone.utc).isoformat()}
     # Process input
     local_vars = {k: v for k, v in locals().items() if k not in ('result',)}
     result["input"] = str(local_vars)[:200]
     result["status"] = "processed"
-    return json.dumps(result, indent=2)
+    return result
 
 @mcp.tool()
-def generate_api_docs(function_signatures: str) -> str:
+def generate_api_docs(function_signatures: str, api_key: str = "") -> str:
     """MEOK AI Labs tool."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     result = {"tool": "generate_api_docs", "timestamp": datetime.now(timezone.utc).isoformat()}
     # Process input
     local_vars = {k: v for k, v in locals().items() if k not in ('result',)}
     result["input"] = str(local_vars)[:200]
     result["status"] = "processed"
-    return json.dumps(result, indent=2)
+    return result
 
 @mcp.tool()
-def generate_contributing(project_name: str) -> str:
+def generate_contributing(project_name: str, api_key: str = "") -> str:
     """MEOK AI Labs tool."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     result = {"tool": "generate_contributing", "timestamp": datetime.now(timezone.utc).isoformat()}
     # Process input
     local_vars = {k: v for k, v in locals().items() if k not in ('result',)}
     result["input"] = str(local_vars)[:200]
     result["status"] = "processed"
-    return json.dumps(result, indent=2)
+    return result
 
 
 if __name__ == "__main__":
