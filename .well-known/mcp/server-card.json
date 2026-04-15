@@ -1,0 +1,54 @@
+{
+  "name": "readme-generator-ai",
+  "description": "MEOK AI Labs \u2014 Generate README.md files from project analysis.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/readme-generator-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "generate_readme",
+      "description": "Generate a complete README.md from project metadata including sections for install, usage, API, and contributing."
+    },
+    {
+      "name": "analyze_project",
+      "description": "Analyze project structure from a file list to recommend README sections and detect project type."
+    },
+    {
+      "name": "suggest_sections",
+      "description": "Suggest appropriate README sections based on project type and capabilities."
+    },
+    {
+      "name": "generate_badges",
+      "description": "Generate shield.io badge markdown for a GitHub repository."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Developer Tools",
+    "Productivity"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
