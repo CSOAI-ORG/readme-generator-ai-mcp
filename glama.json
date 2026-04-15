@@ -1,0 +1,10 @@
+{
+  "name": "readme-generator-ai-mcp",
+  "description": "MEOK AI Labs \u2014 readme-generator-ai-mcp",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/readme-generator-ai-mcp",
+  "license": "MIT",
+  "runtime": "python",
+  "entryPoint": "mcp-wrapper.py"
+}
