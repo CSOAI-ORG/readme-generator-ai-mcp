@@ -1,5 +1,5 @@
 name: readme-generator-ai-mcp
-description: "readme-generator-ai-mcp \u2014 Generate project README files."
+description: "MEOK AI Labs \u2014 Generate README.md files from project analysis."
 version: 1.0.0
 tools:
 - name: generate_readme
