@@ -1,6 +1,6 @@
 {
   "name": "readme-generator-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs \u2014 Generate README.md files from project analysis.",
+  "description": "Readme Generator Ai automation via MCP. Includes generate readme, add badges, generate api docs. By MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {

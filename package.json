@@ -1,1 +1,11 @@
-{"name":"readme-generator-ai-mcp","version":"1.0.0","description":"MEOK AI Labs MCP","author":"MEOK AI Labs","license":"MIT","repository":{"type":"git","url":"https://github.com/CSOAI-ORG/readme-generator-ai-mcp"}}
+{
+  "name": "readme-generator-ai-mcp",
+  "version": "1.0.0",
+  "description": "Readme Generator Ai automation via MCP. Includes generate readme, add badges, generate api docs. By MEOK AI Labs.",
+  "author": "MEOK AI Labs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/readme-generator-ai-mcp"
+  }
+}
