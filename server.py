@@ -75,6 +75,16 @@ def generate_readme(project_name: str, description: str, language: str = "python
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        project_name (str): The project name to analyze or process.
+        description (str): The description to analyze or process.
+        language (str): The language to analyze or process.
+        features (str): The features to analyze or process.
+        author (str): The author to analyze or process.
+        license_type (str): The license type to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -146,6 +156,12 @@ def analyze_project(file_list: str, language: str = "python", api_key: str = "")
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        file_list (str): The file list to analyze or process.
+        language (str): The language to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -217,6 +233,14 @@ def suggest_sections(project_type: str, has_api: bool = False, has_cli: bool = F
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        project_type (str): The project type to analyze or process.
+        has_api (bool): The has api to analyze or process.
+        has_cli (bool): The has cli to analyze or process.
+        has_docker (bool): The has docker to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -286,6 +310,17 @@ def generate_badges(owner: str, repo: str, badges: str = "license,version,build"
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        owner (str): The owner to analyze or process.
+        repo (str): The repo to analyze or process.
+        badges (str): The badges to analyze or process.
+        version: The version to analyze or process.
+        build": The build" to analyze or process.
+        license_type (str): The license type to analyze or process.
+        version (str): The version to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
