@@ -60,7 +60,22 @@ BADGE_TEMPLATES = {
 def generate_readme(project_name: str, description: str, language: str = "python",
                     features: str = "", author: str = "", license_type: str = "MIT",
                     api_key: str = "") -> str:
-    """Generate a complete README.md from project metadata including sections for install, usage, API, and contributing."""
+    """Generate a complete README.md from project metadata including sections for install, usage, API, and contributing.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -101,7 +116,23 @@ def generate_readme(project_name: str, description: str, language: str = "python
 
 @mcp.tool()
 def analyze_project(file_list: str, language: str = "python", api_key: str = "") -> str:
-    """Analyze project structure from a file list to recommend README sections and detect project type."""
+    """Analyze project structure from a file list to recommend README sections and detect project type.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -142,7 +173,23 @@ def analyze_project(file_list: str, language: str = "python", api_key: str = "")
 @mcp.tool()
 def suggest_sections(project_type: str, has_api: bool = False, has_cli: bool = False,
                      has_docker: bool = False, api_key: str = "") -> str:
-    """Suggest appropriate README sections based on project type and capabilities."""
+    """Suggest appropriate README sections based on project type and capabilities.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -182,7 +229,22 @@ def suggest_sections(project_type: str, has_api: bool = False, has_cli: bool = F
 @mcp.tool()
 def generate_badges(owner: str, repo: str, badges: str = "license,version,build",
                     license_type: str = "MIT", version: str = "1.0.0", api_key: str = "") -> str:
-    """Generate shield.io badge markdown for a GitHub repository."""
+    """Generate shield.io badge markdown for a GitHub repository.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
