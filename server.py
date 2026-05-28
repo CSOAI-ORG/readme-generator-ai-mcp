@@ -2,7 +2,6 @@
 """Generate README.md files from project analysis. — MEOK AI Labs."""
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import json, os, re, hashlib
@@ -10,6 +9,15 @@ from datetime import datetime, timezone
 from typing import Optional
 from collections import defaultdict
 from mcp.server.fastmcp import FastMCP
+
+STRIPE_199 = "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"
+
+def _add_upgrade_tail(response, tier="free"):
+    """Append upgrade nudge to free-tier success responses."""
+    if isinstance(response, dict) and tier == "free":
+        response["_upgrade_note"] = "Pro tier: unlimited calls + priority support. Upgrade: " + STRIPE_199
+    return response
+
 
 FREE_DAILY_LIMIT = 30
 _usage = defaultdict(list)
@@ -102,7 +110,7 @@ def generate_readme(project_name: str, description: str, language: str = "python
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
     if err := _rl(): return err
 
     lang_cfg = LANGUAGE_CONFIGS.get(language.lower(), LANGUAGE_CONFIGS["python"])
@@ -179,7 +187,7 @@ def analyze_project(file_list: str, language: str = "python", api_key: str = "")
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
     if err := _rl(): return err
 
     files = [f.strip() for f in file_list.split(",") if f.strip()]
@@ -258,7 +266,7 @@ def suggest_sections(project_type: str, has_api: bool = False, has_cli: bool = F
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
     if err := _rl(): return err
 
     base_sections = ["header", "description", "installation", "usage", "contributing", "license"]
@@ -338,7 +346,7 @@ def generate_badges(owner: str, repo: str, badges: str = "license,version,build"
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
     if err := _rl(): return err
 
     requested = [b.strip().lower() for b in badges.split(",") if b.strip()]
@@ -371,5 +379,8 @@ def generate_badges(owner: str, repo: str, badges: str = "license,version,build"
     }
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()
