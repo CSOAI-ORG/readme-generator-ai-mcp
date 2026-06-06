@@ -1,0 +1,31 @@
+# Readme Generator Ai MCP
+
+> Readme Generator Ai MCP Server by MEOK AI Labs
+
+`readme-generator-ai-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+
+## Install
+
+```bash
+pip install readme-generator-ai-mcp
+```
+
+Or run without installing:
+
+```bash
+uvx readme-generator-ai-mcp
+```
+
+## Tools
+
+- `generate_readme` — Generate a complete README.md from project metadata including sections for install, usage, API, and contributing.
+- `analyze_project` — Analyze project structure from a file list to recommend README sections and detect project type.
+- `suggest_sections` — Suggest appropriate README sections based on project type and capabilities.
+- `generate_badges` — Generate shield.io badge markdown for a GitHub repository.
+
+## Links
+
+- Source: https://github.com/CSOAI-ORG/readme-generator-ai-mcp
+- PyPI: https://pypi.org/project/readme-generator-ai-mcp/
+- MEOK AI Labs: https://meok.ai
+- Council of AI: https://councilof.ai
