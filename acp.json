@@ -1,0 +1,22 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "readme-generator-ai-mcp",
+    "description": "Readme Generator Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.7",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "readme-generator-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "generate_readme",
+      "analyze_project",
+      "suggest_sections",
+      "generate_badges"
+    ]
+  }
+}

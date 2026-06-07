@@ -1,0 +1,59 @@
+{
+  "name": "readme-generator-ai-mcp",
+  "description": "Readme Generator Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/readme-generator-ai-mcp.html",
+  "version": "1.0.7",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "generate_readme",
+      "name": "Generate Readme",
+      "description": "generate_readme via readme-generator-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "analyze_project",
+      "name": "Analyze Project",
+      "description": "analyze_project via readme-generator-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "suggest_sections",
+      "name": "Suggest Sections",
+      "description": "suggest_sections via readme-generator-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_badges",
+      "name": "Generate Badges",
+      "description": "generate_badges via readme-generator-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
