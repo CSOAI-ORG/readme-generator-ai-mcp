@@ -1,0 +1,9 @@
+# readme-generator-ai-mcp - Auto-trigger Rules
+
+When the user asks about readme generator, use readme-generator-ai-mcp tools: generate_readme, analyze_project, suggest_sections, generate_badges
+
+**MCP server for readme generator ai mcp operations**
+
+Install: `pip install readme-generator-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "readme-generator-ai-mcp"
-version = "1.0.4"
+version = "1.0.7"
 readme = "README.md"
 description = "Readme Generator Ai automation via MCP. Includes generate readme, add badges, generate api docs. By MEOK AI Labs."
 license = {file = "LICENSE"}
@@ -22,7 +22,7 @@ Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/readme-generator-ai-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py"]
+only-include = ["server.py", "auth_middleware.py"]
 
 [project.scripts]
 readme_generator_ai_mcp = "server:main"

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Generate README.md files from project analysis. — MEOK AI Labs."""
+"""
+Generate README.md files from project analysis. — MEOK AI Labs."""
 
 import sys, os
 from auth_middleware import check_access

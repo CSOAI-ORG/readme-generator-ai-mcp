@@ -1,0 +1,25 @@
+{
+  "name": "readme-generator-ai-mcp",
+  "title": "Readme Generator Ai Mcp",
+  "description": "Readme Generator Ai automation via MCP. Includes generate readme, add badges, generate api docs. By MEOK AI Labs.",
+  "version": "1.0.7",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "generate_readme"
+    },
+    {
+      "name": "analyze_project"
+    },
+    {
+      "name": "suggest_sections"
+    },
+    {
+      "name": "generate_badges"
+    }
+  ]
+}

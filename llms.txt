@@ -1,31 +1,33 @@
-# Readme Generator Ai MCP
-
-> Readme Generator Ai MCP Server by MEOK AI Labs
-
-`readme-generator-ai-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+# readme-generator-ai-mcp
+# **MCP server for readme generator ai mcp operations**
 
 ## Install
-
 ```bash
 pip install readme-generator-ai-mcp
 ```
 
-Or run without installing:
-
-```bash
-uvx readme-generator-ai-mcp
-```
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
 
 ## Tools
 
-- `generate_readme` — Generate a complete README.md from project metadata including sections for install, usage, API, and contributing.
-- `analyze_project` — Analyze project structure from a file list to recommend README sections and detect project type.
-- `suggest_sections` — Suggest appropriate README sections based on project type and capabilities.
-- `generate_badges` — Generate shield.io badge markdown for a GitHub repository.
+### `generate_readme`
+Generate a complete README.md from project metadata including sections for install, usage, API, and contributing.
 
-## Links
+### `analyze_project`
+Analyze project structure from a file list to recommend README sections and detect project type.
 
-- Source: https://github.com/CSOAI-ORG/readme-generator-ai-mcp
-- PyPI: https://pypi.org/project/readme-generator-ai-mcp/
-- MEOK AI Labs: https://meok.ai
-- Council of AI: https://councilof.ai
+### `suggest_sections`
+Suggest appropriate README sections based on project type and capabilities.
+
+### `generate_badges`
+Generate shield.io badge markdown for a GitHub repository.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
