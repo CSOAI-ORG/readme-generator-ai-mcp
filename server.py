@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import urllib.request as _meter_urlreq
+import urllib.error as _meter_urlerr
 """
 Generate README.md files from project analysis. — MEOK AI Labs."""
 
@@ -63,6 +65,24 @@ BADGE_TEMPLATES = {
     "downloads": "[![Downloads](https://img.shields.io/npm/dm/{package}.svg)](https://npmjs.com/package/{package})",
     "stars": "[![Stars](https://img.shields.io/github/stars/{owner}/{repo}.svg)](https://github.com/{owner}/{repo})",
 }
+
+
+def _server_meter_check(api_key: str = "") -> dict:
+    """Calls the live /verify endpoint for server-side metering. Fail-open."""
+    try:
+        data = json.dumps({"api_key": api_key, "tool": ""}).encode()
+        req = _meter_urlreq.Request(_METER_URL, data=data,
+            headers={"Content-Type": "application/json"}, method="POST")
+        with _meter_urlreq.urlopen(req, timeout=2.5) as r:
+            d = json.loads(r.read())
+            if isinstance(d, dict) and "allowed" in d:
+                return d
+    except Exception:
+        pass
+    return {"allowed": True, "tier": "anonymous", "remaining": 200, "upgrade_url": "https://meok.ai/pricing"}
+
+
+_METER_URL = "https://proofof.ai/verify"
 
 
 @mcp.tool()
