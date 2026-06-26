@@ -113,3 +113,28 @@ Free tier: 10 calls/day per MCP. Pro tier (£79/mo): unlimited + cryptographical
 
 <!-- BUY-LADDER:END -->
 
+
+
+## Configuration
+
+Add to your `claude_desktop_config.json` (Claude Desktop) or your MCP client config:
+
+```json
+{
+  "mcpServers": {
+    "readme-generator-ai-mcp": {
+      "command": "uvx",
+      "args": ["readme-generator-ai-mcp"]
+    }
+  }
+}
+```
+
+Or: `pip install readme-generator-ai-mcp` then run the `readme-generator-ai-mcp` command (stdio transport).
+
+## Examples
+
+Once configured, ask your assistant, for example:
+- "Use `generate_readme` to …"
+- "Use `analyze_project` to …"
+- "Use `suggest_sections` to …"
